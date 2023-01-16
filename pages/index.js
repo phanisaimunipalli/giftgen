@@ -65,8 +65,8 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>OpenAI Quickstart</title>
-        <link rel="icon" href="/dog.png" />
+        <title>GiftGen (by ChatGPT) </title>
+        <link rel="icon" href="/giftbox.png" />
       </Head>
 
       <div className={styles.body}>
