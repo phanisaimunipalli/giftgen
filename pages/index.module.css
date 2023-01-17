@@ -1,28 +1,16 @@
-/* @font-face {
-  font-family: "ColfaxAI";
-  src: url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff2)
-      format("woff2"),
-    url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff) format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "ColfaxAI";
-  src: url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff2) format("woff2"),
-    url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff) format("woff");
-  font-weight: bold;
-  font-style: normal;
-} */
-
 .body {
   /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
   background: url(https://source.unsplash.com/_HCpwe1-Prc/1920x1280);
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
   animation: gradient 15s ease infinite;
-  height: 100vh;
+  min-height: 100vh;
   font-family: "Roboto", sans-serif;
 }
-@keyframes gradient {
+/* @keyframes gradient {
   0% {
     background-position: 0% 50%;
   }
@@ -32,7 +20,7 @@
   100% {
     background-position: 0% 50%;
   }
-}
+} */
 
 .main,
 .main input {
@@ -77,7 +65,7 @@
   color: #8e8ea0;
   opacity: 1;
 }
-.main input[type="submit"] {
+/* .main input[type="submit"] {
   padding: 12px 0;
   color: #fff;
   background-color: #10a37f;
@@ -85,7 +73,38 @@
   border-radius: 4px;
   text-align: center;
   cursor: pointer;
+} */
+
+.submitFeedback {
+  padding: 10px 30px;
+  font-size: 34px;
+  cursor: pointer;
+  border-radius: 7px;
+  border-bottom-left-radius: 0;
+  background-color: var(--feedback-secondary-color);
+  color: white;
+  transition: all 0.3s;
 }
+
+.submitFeedback:hover {
+  border-radius: 7px;
+  border-bottom-left-radius: 0;
+  color: var(--feedback-primary-color);
+  background-color: #10a37f;
+  color: white;
+  background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffacac' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  animation: animatedBackground 5s linear infinite alternate;
+}
+
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+
 .main .result {
   font-weight: bold;
   margin-top: 40px;
@@ -102,4 +121,20 @@
   border-radius: 4px;
   margin-bottom: 12px;
   margin-top: 4px;
+}
+
+.footer {
+  background-color: #121315;
+  color: #a7a7a7;
+  font-size: 16px;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+.footer * {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
 }

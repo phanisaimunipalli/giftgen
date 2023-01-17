@@ -101,7 +101,7 @@ export default function Home() {
                         onSubmit={onSubmit}
                         textAlign="center"
                       >
-                        <label>Occasion or Event</label>
+                        <label>What is the Occasion or Event?</label>
                         <input
                           type="text"
                           name="ocassion"
@@ -157,7 +157,7 @@ export default function Home() {
                           }
                         />
 
-                        <label>Hobbies</label>
+                        <label>Hobbies/Interests</label>
                         <input
                           type="text"
                           name="hobbies"
@@ -165,7 +165,11 @@ export default function Home() {
                           value={hobbies}
                           onChange={(e) => setHobbies(e.target.value)}
                         />
-                        <input type="submit" value="Generate gift ideas" />
+                        <input
+                          type="submit"
+                          className={styles.submitFeedback}
+                          value="Generate gift ideas"
+                        />
                       </form>
                     )}
                   </Item>
@@ -174,6 +178,12 @@ export default function Home() {
             </Grid>
           </Grid>
         </main>
+
+        {/* <div class="footer">
+          <a href="">
+            <p>Copyright &copy; 2021 Foolish Developer</p>
+          </a>
+        </div> */}
       </div>
     </div>
   );
