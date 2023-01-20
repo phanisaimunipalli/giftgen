@@ -197,7 +197,7 @@ export default function Home() {
 
         <div className={styles.footer}>
           <a href="https://www.linkedin.com/in/iamphanisairam/" target="_blank">
-            <p> &copy; GiftGen@2022 Made with &#9829; on ChatGPT</p>
+            <p> &copy; GiftGen@2023 Made with &#9829; on ChatGPT</p>
           </a>
         </div>
       </div>
