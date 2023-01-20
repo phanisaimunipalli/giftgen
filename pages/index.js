@@ -179,11 +179,11 @@ export default function Home() {
           </Grid>
         </main>
 
-        {/* <div class="footer">
-          <a href="">
-            <p>Copyright &copy; 2021 Foolish Developer</p>
+        <div className={styles.footer}>
+          <a href="https://www.linkedin.com/in/iamphanisairam/" target="_blank">
+            <p> &copy; GiftGen@2022 Made with &#9829; on ChatGPT</p>
           </a>
-        </div> */}
+        </div>
       </div>
     </div>
   );

@@ -124,12 +124,10 @@
 }
 
 .footer {
-  background-color: #121315;
   color: #a7a7a7;
   font-size: 16px;
   text-align: center;
   margin: auto;
-  display: flex;
   align-items: center;
 }
 .footer * {
@@ -137,4 +135,13 @@
   box-sizing: border-box;
   border: none;
   outline: none;
+}
+
+.a {
+  text-decoration: none;
+  color: black;
+}
+.a:checked {
+  text-decoration: none;
+  color: black;
 }
