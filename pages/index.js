@@ -13,7 +13,6 @@ import { useEffect } from "react";
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
-  padding: theme.spacing(1),
   textAlign: "center",
   color: theme.palette.text.secondary,
 }));
@@ -101,7 +100,10 @@ export default function Home() {
                         onSubmit={onSubmit}
                         textAlign="center"
                       >
-                        <label>What is the Occasion or Event?</label>
+                        <label>
+                          {" "}
+                          <b>What is the Occasion or Event?</b>
+                        </label>
                         <input
                           type="text"
                           name="ocassion"
@@ -109,7 +111,9 @@ export default function Home() {
                           value={ocassion}
                           onChange={(e) => setOcassion(e.target.value)}
                         />
-                        <label>For who is the gift?</label>
+                        <label>
+                          <b>For who is the gift?</b>
+                        </label>
                         <select
                           name="gender"
                           value={gender}
@@ -120,7 +124,9 @@ export default function Home() {
                           <option value="woman">Couple</option>
                         </select>
 
-                        <label>Age</label>
+                        <label>
+                          <b>Age</b>
+                        </label>
                         <input
                           type="number"
                           min={1}
@@ -133,7 +139,9 @@ export default function Home() {
                           }
                         />
 
-                        <label>Price from</label>
+                        <label>
+                          <b>Price from</b>
+                        </label>
                         <input
                           type="number"
                           min={1}
@@ -145,7 +153,9 @@ export default function Home() {
                           }
                         />
 
-                        <label>Price to</label>
+                        <label>
+                          <b>Price to</b>
+                        </label>
                         <input
                           type="number"
                           min={1}
@@ -157,11 +167,13 @@ export default function Home() {
                           }
                         />
 
-                        <label>Hobbies/Interests</label>
+                        <label>
+                          <b>Do they have any Hobbies or Interests?</b>
+                        </label>
                         <input
                           type="text"
                           name="hobbies"
-                          placeholder="Enter the hobbies"
+                          placeholder="Eg: Music, Painting"
                           value={hobbies}
                           onChange={(e) => setHobbies(e.target.value)}
                         />
@@ -175,6 +187,10 @@ export default function Home() {
                   </Item>
                 </Grid>
               </Paper>
+              <h4>
+                Now, Gift Your Friends & Family a Personalized Gift They ❤️ &
+                makes them 🥰{" "}
+              </h4>
             </Grid>
           </Grid>
         </main>
