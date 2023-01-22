@@ -10,7 +10,7 @@
 3. Navigate into the project directory
 
    ```bash
-   $ cd openai-quickstart-node
+   $ cd giftgen
    ```
 
 4. Install the requirements
