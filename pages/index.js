@@ -19,6 +19,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function Home() {
   const [gender, setGender] = useState("man");
+  const [gifttype, setGiftType] = useState("");
   const [age, setAge] = useState(30);
   const [ocassion, setOcassion] = useState("");
   const [priceMin, setPriceMin] = useState(25);
@@ -54,6 +55,7 @@ export default function Home() {
         gender,
         age,
         hobbies,
+        gifttype,
       }),
     });
     const data = await response.json();
@@ -64,7 +66,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>GiftGen (by ChatGPT) </title>
+        <title>GiftGen (by GPT 3.5 Turbo) </title>
         <link rel="icon" href="/giftbox.png" />
       </Head>
 
@@ -85,7 +87,7 @@ export default function Home() {
                   <Item>
                     {loading ? (
                       <div>
-                        <p>Looking for the best gift ideas...</p>
+                        <h4>Your Gift is Going to Bring a Smile & Memory...</h4>
                         <CircularProgress />
                       </div>
                     ) : (
@@ -98,7 +100,7 @@ export default function Home() {
                       <form
                         style={{ margin: "auto", minHeight: "20vh" }}
                         onSubmit={onSubmit}
-                        textAlign="center"
+                        textalign="center"
                       >
                         <label>
                           {" "}
@@ -109,10 +111,11 @@ export default function Home() {
                           name="ocassion"
                           placeholder="Enter the occassion or event..."
                           value={ocassion}
+                          required
                           onChange={(e) => setOcassion(e.target.value)}
                         />
                         <label>
-                          <b>For who is the gift?</b>
+                          <b>Who is going to receive the Gift?</b>
                         </label>
                         <select
                           name="gender"
@@ -125,7 +128,7 @@ export default function Home() {
                         </select>
 
                         <label>
-                          <b>Age</b>
+                          <b>Age of Gift Recipient</b>
                         </label>
                         <input
                           type="number"
@@ -177,6 +180,21 @@ export default function Home() {
                           value={hobbies}
                           onChange={(e) => setHobbies(e.target.value)}
                         />
+                        <label>
+                          <b>What kind of Gifts you have in mind?</b>
+                        </label>
+                        <select
+                          name="gifttype"
+                          value={gifttype}
+                          onChange={(e) => setGiftType(e.target.value)}
+                        >
+                          <option value="creative and unique">
+                            Creative & Unique
+                          </option>
+                          <option value="popular">Popular</option>
+                          <option value="eco-friendly">Eco-Friendly</option>
+                        </select>
+
                         <input
                           type="submit"
                           className={styles.submitFeedback}

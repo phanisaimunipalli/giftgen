@@ -6,16 +6,41 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 export default async function (req, res) {
-  const { ocassion, priceMin, priceMax, gender, age, hobbies } = req.body;
-  const completion = await openai.createCompletion({
-    model: "text-davinci-003",
-    prompt: generatePrompt(ocassion, priceMin, priceMax, gender, age, hobbies),
+  console.log("request: ", req.body);
+  const { ocassion, priceMin, priceMax, gender, age, hobbies, gifttype } =
+    req.body;
+  const completion = await openai.createChatCompletion({
+    model: "gpt-3.5-turbo",
+    messages: [
+      {
+        role: "user",
+        content: generatePrompt(
+          ocassion,
+          priceMin,
+          priceMax,
+          gender,
+          age,
+          hobbies,
+          gifttype
+        ),
+      },
+    ],
     temperature: 0.6,
-    max_tokens: 2048,
+    max_tokens: 1000,
   });
   //   console.log(res);
-  res.status(200).json({ result: completion.data.choices[0].text });
+  res.status(200).json({ result: completion.data.choices[0].message.content });
 }
-function generatePrompt(ocassion, priceMin, priceMax, gender, age, hobbies) {
-  return `Suggest 5 ${ocassion} gift ideas between ${priceMin}$ and ${priceMax}$ for a ${age} years old ${gender} that is into ${hobbies}.`;
+function generatePrompt(
+  ocassion,
+  priceMin,
+  priceMax,
+  gender,
+  age,
+  hobbies,
+  gifttype
+) {
+  const cont = `Suggest top 3 ${ocassion} gift ideas those are ${gifttype} between ${priceMin}$ and ${priceMax}$ for ${age} years old ${gender} that is into ${hobbies}. Also add only one short personalized message at the end of all 3.`;
+  // console.log("content: ", cont);
+  return cont;
 }
