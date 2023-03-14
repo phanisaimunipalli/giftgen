@@ -6,7 +6,6 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 export default async function (req, res) {
-  console.log("request: ", req.body);
   const { ocassion, priceMin, priceMax, gender, age, hobbies, gifttype } =
     req.body;
   const completion = await openai.createChatCompletion({
@@ -25,10 +24,10 @@ export default async function (req, res) {
         ),
       },
     ],
-    temperature: 0.6,
-    max_tokens: 1000,
+    temperature: 0.5,
+    max_tokens: 150,
   });
-  //   console.log(res);
+  // console.log("completion.data is: ", completion.data);
   res.status(200).json({ result: completion.data.choices[0].message.content });
 }
 function generatePrompt(
@@ -40,7 +39,7 @@ function generatePrompt(
   hobbies,
   gifttype
 ) {
-  const cont = `Suggest top 3 ${ocassion} gift ideas those are ${gifttype} between ${priceMin}$ and ${priceMax}$ for ${age} years old ${gender} that is into ${hobbies}. Also add only one short personalized message at the end of all 3.`;
+  const cont = `Strictly in less than 200 words or 6 seconds, Suggest top 3 ${ocassion} gift ideas those are ${gifttype} between ${priceMin}$ and ${priceMax}$ for ${age} years old ${gender} that is into ${hobbies}. Also add only one short personalized message at the end of all 3.`;
   // console.log("content: ", cont);
   return cont;
 }
