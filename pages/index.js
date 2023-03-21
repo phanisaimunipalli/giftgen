@@ -231,13 +231,13 @@ export default function Home() {
       <Helmet>
         <script type="text/javascript">
           {`
-            (function(w) {
-              var s = document.createElement('script');
-              s.src = '<https://survey.survicate.com/workspaces/d1bd058057ce52edc5b1b7972eeda26f/web_surveys.js>';
-              s.async = true;
-              var e = document.getElementsByTagName('script')[0];
-              e.parentNode.insertBefore(s, e);
-            })(window);
+              (function (w) {
+                var s = document.createElement('script');
+                s.src = 'https://survey.survicate.com/workspaces/d1bd058057ce52edc5b1b7972eeda26f/web_surveys.js';
+                s.async = true;
+                var e = document.getElementsByTagName('script')[0];
+                e.parentNode.insertBefore(s, e);
+              })(window);
           `}
         </script>
       </Helmet>
