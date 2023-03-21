@@ -9,7 +9,7 @@ export default async function (req, res) {
   const { ocassion, priceMin, priceMax, gender, age, hobbies, gifttype } =
     req.body;
   const completion = await openai.createChatCompletion({
-    model: "gpt-3.5-turbo",
+    model: "gpt-4",
     messages: [
       {
         role: "user",
@@ -24,7 +24,7 @@ export default async function (req, res) {
         ),
       },
     ],
-    temperature: 0.5,
+    temperature: 0.3,
     max_tokens: 150,
   });
   // console.log("completion.data is: ", completion.data);

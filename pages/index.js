@@ -9,6 +9,7 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -66,7 +67,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>GiftGen (by GPT 3.5 Turbo) </title>
+        <title>GiftGen (by GPT 4) </title>
         <link rel="icon" href="/giftbox.png" />
       </Head>
 
@@ -79,10 +80,10 @@ export default function Home() {
             alignItems="center"
             textAlign="center"
             justifyContent="center"
-            style={{ minHeight: "20vh", minWidth: "60vh" }}
+            style={{ minHeight: "20vh", minWidth: "30vh" }}
           >
             <Grid item md={4} textAlign="center">
-              <Paper elevation={24}>
+              <Paper elevation={14}>
                 <Grid item xs={8} md={6}>
                   <Item>
                     {loading ? (
@@ -209,16 +210,37 @@ export default function Home() {
                 Now, Gift Your Friends & Family a Personalized Gift They ❤️ &
                 makes them 🥰{" "}
               </h4>
+              <a
+                href="https://www.linkedin.com/in/iamphanisairam/"
+                target="_blank"
+              >
+                <p> &copy; GiftGen@2023 Made with &#9829; on OpenAI's GPT</p>
+              </a>
             </Grid>
           </Grid>
+          {/* <div className={styles.footer}>
+            <a
+              href="https://www.linkedin.com/in/iamphanisairam/"
+              target="_blank"
+            >
+              <p> &copy; GiftGen@2023 Made with &#9829; on ChatGPT</p>
+            </a>
+          </div> */}
         </main>
-
-        <div className={styles.footer}>
-          <a href="https://www.linkedin.com/in/iamphanisairam/" target="_blank">
-            <p> &copy; GiftGen@2023 Made with &#9829; on ChatGPT</p>
-          </a>
-        </div>
       </div>
+      <Helmet>
+        <script type="text/javascript">
+          {`
+            (function(w) {
+              var s = document.createElement('script');
+              s.src = '<https://survey.survicate.com/workspaces/d1bd058057ce52edc5b1b7972eeda26f/web_surveys.js>';
+              s.async = true;
+              var e = document.getElementsByTagName('script')[0];
+              e.parentNode.insertBefore(s, e);
+            })(window);
+          `}
+        </script>
+      </Helmet>
     </div>
   );
 }

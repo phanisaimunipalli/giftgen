@@ -39,11 +39,10 @@
   width: 34px;
 }
 .main h3 {
-  font-size: 32px;
-  line-height: 40px;
+  font-size: 30px;
+  line-height: 2px;
   font-weight: bold;
   color: #202123;
-  margin: 16px 0 40px;
 }
 .main form {
   display: flex;
@@ -80,7 +79,7 @@
   font-size: 34px;
   cursor: pointer;
   border-radius: 7px;
-  border-bottom-left-radius: 0;
+  border-bottom-left-radius: 2;
   background-color: var(--feedback-secondary-color);
   color: white;
   transition: all 0.3s;
@@ -90,7 +89,7 @@
 
 .submitFeedback:hover {
   border-radius: 7px;
-  border-bottom-left-radius: 0;
+  border-bottom-left-radius: 2;
   color: var(--feedback-primary-color);
   background-color: #10a37f;
   color: white;
@@ -116,7 +115,16 @@
 }
 
 .main input[type="text"],
-.main input[type="number"],
+.main input[type="number"] {
+  padding: 12px 46px;
+  border: 1px solid #10a37f;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  margin-top: 4px;
+  height: 13px;
+  width: 225px;
+}
+
 .main select {
   padding: 12px 46px;
   border: 1px solid #10a37f;
